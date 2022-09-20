@@ -32,10 +32,8 @@ def display_lists(options):
     for words in options:
         print(words)
 
-trip = trip_lists()
 
-
-def not_satisfactory_trip():
+def not_satisfactory_trip(trip):
     question = input('Are you satified with this trip? ')
     while question == 'No':
         re_pick = input("Which option would you like to change? ")
@@ -54,42 +52,22 @@ def not_satisfactory_trip():
         elif re_pick == 'Transportation':
             trip[3] = random_transportation()
             display_lists(trip)
+    return trip
         
             
         
 
-def satisfactory_trip():
+def satisfactory_trip(trip):
     print('This is your final trip ')
     display_lists(trip)        
 
             
-            
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def run_trip_generator():
+    trip = trip_lists()
     display_lists(trip)
-    not_satisfactory_trip()
-    satisfactory_trip()
+    not_satisfactory_trip(trip)
+    satisfactory_trip(trip)
     
 run_trip_generator()
