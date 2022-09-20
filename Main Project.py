@@ -34,21 +34,21 @@ def display_lists(options):
 
 
 def not_satisfactory_trip(trip):
-    question = input('Are you satified with this trip? ')
+    question = input('Are you satified with this trip? (Yes or No)')
     while question == 'No':
         re_pick = input("Which option would you like to change? ")
         if re_pick == 'Destination':
             trip[0] = random_destination()
             display_lists(trip)
-            question = input('Are you satified with this trip? ')
+            question = input('Are you satified with this trip? (Yes or No)')
         elif re_pick == 'Restaurant':
             trip[1] = random_restaurants()
             display_lists(trip)
-            question = input('Are you satified with this trip? ')
+            question = input('Are you satified with this trip? (Yes or No)')
         elif re_pick == 'Entertainment':
             trip[2] = random_entertainment()
             display_lists(trip)
-            question = input('Are you satified with this trip? ')
+            question = input('Are you satified with this trip? (Yes or No) ')
         elif re_pick == 'Transportation':
             trip[3] = random_transportation()
             display_lists(trip)
